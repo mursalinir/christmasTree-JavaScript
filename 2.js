@@ -1,11 +1,6 @@
-let input;
-const readline = require("readline");
-const takeInput = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+const prompt = require('prompt-sync')();
 
-const n = dataInput();
+let n = parseInt(prompt());
 let d;
 let max_x = 0;
 let min_x = 10000;
@@ -26,25 +21,16 @@ let cristmasTree = [
 
 for(var i=0; i<n; i++) {
 
-	cristmasTree[i].tree.x = dataInput();
-    cristmasTree[i].tree.y = dataInput();
-    cristmasTree[i].tree.r = dataInput();
+	cristmasTree[i].tree.x = prompt();
+    cristmasTree[i].tree.y = prompt();
+    cristmasTree[i].tree.r = prompt();
 }
-console.log(cristmasTree)
-const printMyValue = () => {
-    console.log("Hello world, This is your number", number)
-}
+//console.log(cristmasTree)
 
 /*const distance = (x1, y1, x2, y2) => {
     return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
 }*/
-function dataInput(){
-    takeInput.question("", function (answer) {
-        input = parseInt(answer)
-        takeInput.close();        
-    });
-    return input;
-}
+
 
 function distance (x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
