@@ -43,4 +43,4 @@ const printMyValue = () => {
     console.log("Hello world, This is your number", number)
 }
 
-console.log(distance())
+//console.log(distance())
