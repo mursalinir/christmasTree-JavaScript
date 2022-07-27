@@ -1,11 +1,11 @@
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
 var takeInput = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
+    input: process.stdin,
+    output: process.stdout
 });
 
-let number
+let number;
 let d;
 let max_x = 10000;
 let min_x = 0;
@@ -21,27 +21,21 @@ let value = {
     r: 0
 }
 takeInput.on('line', (answer) => {
-    number = parseInt(answer);
+    number = parseInt(answer.split(" "));
     inputTree(number - 1)
-  });
+});
 
 function inputTree(n) {
     takeInput.on('line', (x) => {
-        value.x = parseInt(x);
-        takeInput.on('line', (y) => {
-            value.y = parseInt(y);
-            takeInput.on('line', (r) => {
-                value.r = parseInt(r);
-                christmasTree.push({ x: value.x, y: value.y, r: value.r });
-                if (n > 0) {
-                    inputTree(n - 1);
-                } else {
-                    //takeInput.close();
-                    maxChristmasTree();
-                }
-            })
-        })
-    });
+        number = parseInt(x.split(" "));
+        christmasTree.push({ x: number[0], y: number[1], r: number[2] });
+        if (n > 0) {
+            inputTree(n - 1);
+        } else {
+            //takeInput.close();
+            maxChristmasTree();
+        }
+    })
 }
 function maxChristmasTree() {
     for (var i = min_x; i <= max_x; i++) {
@@ -57,7 +51,7 @@ function maxChristmasTree() {
     }
     takeInput.on('close', () => {
         console.log(max_tree);
-      });
+    });
 }
 function show() {
     console.log(max_tree)
