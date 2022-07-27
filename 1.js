@@ -43,6 +43,7 @@ const takeInput = readline.createInterface({
   });
   takeInput.question("Please enter the number value ", function (answer) {
     number = parseInt(answer)
-    printMyValue()
     takeInput.close();
+    //printMyValue()
   });
+  printMyValue()

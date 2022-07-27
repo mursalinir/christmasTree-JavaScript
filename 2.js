@@ -16,7 +16,7 @@ let cristmasTree = [{
         r:0 
     }
 }]
-
+function inputTree(n){
 for(var i=0; i<n; i++) {
     takeInput.question("", function (answer) {
         cristmasTree[i].tree.x = parseInt(answer)
@@ -30,6 +30,7 @@ for(var i=0; i<n; i++) {
         cristmasTree[i].tree.r = parseInt(answer)
         takeInput.close();
       });
+}
 }
 //console.log(cristmasTree)
 
