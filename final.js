@@ -18,16 +18,16 @@ let value = {
     y: 0,
     r: 0
 }
-takeInput.question("enter n: ", function (answer) {
+takeInput.question("", function (answer) {
     number = parseInt(answer);
     inputTree(number - 1)
 });
 function inputTree(n) {
-    takeInput.question('Please input x: ', (x) => {
+    takeInput.question('', (x) => {
         value.x = parseInt(x);
-        takeInput.question('Please input y: ', (y) => {
+        takeInput.question('', (y) => {
             value.y = parseInt(y);
-            takeInput.question('Please input r: ', (r) => {
+            takeInput.question('', (r) => {
                 value.r = parseInt(r);
                 christmasTree.push({ x: value.x, y: value.y, r: value.r });
                 if (n > 0) {
@@ -39,7 +39,6 @@ function inputTree(n) {
             })
         })
     });
-    treeDekhao();
 }
 function maxChristmasTree() {
     for (var i = min_x; i <= max_x; i++) {
@@ -57,15 +56,8 @@ function maxChristmasTree() {
 }
 function show() {
     console.log(max_tree)
-}
-
-function treeDekhao() {
-    console.log(christmasTree)
+    takeInput.close();
 }
 function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
 }
-//console.log(distance())
-christmasTree.map(tree => {
-    console.log(tree.x)
-})

@@ -70,3 +70,8 @@ process.stdin.on("end", function () {
 function main(input) {
     process.stdout.write("Hi, " + input + ".\n");       // Writing output to STDOUT
 }*/
+
+//console.log(distance())
+christmasTree.map(tree => {
+    console.log(tree.x)
+})
