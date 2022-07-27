@@ -13,8 +13,6 @@ let min_x = 0;
 let counter = 0;
 let max_tree = 0;
 let inp;
-let y;
-let r;
 let christmasTree = []
 let value = {
     x: 0,
@@ -28,17 +26,15 @@ takeInput.question('', function (answer) {
 
 function inputTree(n) {
     takeInput.question('', function (a) {
-        lines = a;
-        inp = lines.split(" ");
+        //lines = a;
+        inp = a.split(" ");
         value.x = parseInt(inp[0]);
         value.y = parseInt(inp[1]);
         value.r = parseInt(inp[2]);
         christmasTree.push({ x: value.x, y: value.y, r: value.r });
-        //console.log(christmasTree)
         if (n > 0) {
             inputTree(n - 1);
         } else {
-            //takeInput.close();
             maxChristmasTree();
         }
     })
@@ -54,14 +50,11 @@ function maxChristmasTree() {
         if (counter > max_tree) {
             max_tree = counter;
         }
-    }
-    /*takeInput.on('close', () => {
-        console.log(max_tree);
-    });*/
-    show();
+    }show();
 }
 function show() {
     console.log(max_tree)
+    takeInput.close();
 }
 function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
