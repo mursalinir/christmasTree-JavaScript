@@ -34,7 +34,7 @@ function inputTree(n) {
         value.y = parseInt(inp[1]);
         value.r = parseInt(inp[2]);
         christmasTree.push({ x: value.x, y: value.y, r: value.r });
-        console.log(christmasTree)
+        //console.log(christmasTree)
         if (n > 0) {
             inputTree(n - 1);
         } else {
@@ -55,9 +55,10 @@ function maxChristmasTree() {
             max_tree = counter;
         }
     }
-    takeInput.on('close', () => {
+    /*takeInput.on('close', () => {
         console.log(max_tree);
-    });
+    });*/
+    show();
 }
 function show() {
     console.log(max_tree)
