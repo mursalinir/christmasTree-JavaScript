@@ -1,15 +1,10 @@
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
-var reader = require('readline').createInterface({
+var takeInput = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
 });
-reader.on('line', (line) => {
-  lines.push(line);
-});
-reader.on('close', () => {
-  console.log(lines[0]);
-});
+
 let number
 let d;
 let max_x = 10000;
@@ -64,7 +59,6 @@ function maxChristmasTree() {
 }
 function show() {
     console.log(max_tree)
-    takeInput.close();
 }
 function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
