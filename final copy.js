@@ -21,13 +21,13 @@ let value = {
     y: 0,
     r: 0
 }
-takeInput.on('line', (answer) => {
+takeInput.question('', function (answer) {
     number = parseInt(answer);
     inputTree(number - 1)
 });
 
 function inputTree(n) {
-    takeInput.on('line', (a) => {
+    takeInput.question('', function (a) {
         lines = a;
         inp = lines.split(" ");
         value.x = parseInt(inp[0]);
