@@ -55,7 +55,9 @@ function maxChristmasTree() {
             max_tree = counter;
         }
     }
-    show();
+    takeInput.on('close', () => {
+        console.log(max_tree);
+      });
 }
 function show() {
     console.log(max_tree)
