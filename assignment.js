@@ -6,22 +6,22 @@ var takeInput = require('readline').createInterface({
 });
 
 let number;
-let lines = []
+let lines = [];
 let d;
 let max_x = 10000;
 let min_x = 0;
 let counter = 0;
 let max_tree = 0;
 let inp;
-let christmasTree = []
+let christmasTree = [];
 let value = {
     x: 0,
     y: 0,
     r: 0
-}
+};
 takeInput.question('', function (answer) {
     number = parseInt(answer);
-    inputTree(number - 1)
+    inputTree(number - 1);
 });
 
 function inputTree(n) {
@@ -37,7 +37,7 @@ function inputTree(n) {
         } else {
             maxChristmasTree();
         }
-    })
+    });
 }
 function maxChristmasTree() {
     for (var i = min_x; i <= max_x; i++) {
@@ -53,7 +53,7 @@ function maxChristmasTree() {
     }show();
 }
 function show() {
-    console.log(max_tree)
+    console.log(max_tree);
     takeInput.close();
 }
 function distance(x1, y1, x2, y2) {
