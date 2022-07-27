@@ -26,14 +26,14 @@ takeInput.on('line', (answer) => {
 });
 
 function inputTree(n) {
-    console.log(n)
+    console.log("n er man: ",n)
     takeInput.on('line', (answer) => {
-        number.push(answer);
-        number = parseInt(answer.split(" "));
-        console.log(number[0])
-        value.x = number[0];
-        value.y = number[1];
-        value.r = number[2];
+        number = answer;
+        console.log("eta number", number)
+        x = number.split(" ");
+        value.x = parseInt(x[0]);
+        value.y = parseInt(x[1]);
+        value.r = parseIntx([2]);
         christmasTree.push({ x: value.x, y: value.y, r: value.r });
         console.log(christmasTree)
         if (n > 0) {
