@@ -26,9 +26,16 @@ takeInput.on('line', (answer) => {
 });
 
 function inputTree(n) {
-    takeInput.on('line', (x) => {
-        number = parseInt(x.split(" "));
-        christmasTree.push({ x: number[0], y: number[1], r: number[2] });
+    console.log(n)
+    takeInput.on('line', (answer) => {
+        number.push(answer);
+        number = parseInt(answer.split(" "));
+        console.log(number[0])
+        value.x = number[0];
+        value.y = number[1];
+        value.r = number[2];
+        christmasTree.push({ x: value.x, y: value.y, r: value.r });
+        console.log(christmasTree)
         if (n > 0) {
             inputTree(n - 1);
         } else {
