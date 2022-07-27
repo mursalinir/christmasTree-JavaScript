@@ -27,21 +27,23 @@ takeInput.on('line', (answer) => {
 });
 
 function inputTree(n) {
-    takeInput.on('line', (a) => {
-        lines = a;
-        inp = lines.split(" ");
-        value.x = parseInt(inp[0]);
-        value.y = parseInt(inp[1]);
-        value.r = parseInt(inp[2]);
-        christmasTree.push({ x: value.x, y: value.y, r: value.r });
-        console.log(christmasTree)
-        if (n > 0) {
-            inputTree(n - 1);
-        } else {
-            //takeInput.close();
-            maxChristmasTree();
-        }
-    })
+    for (var i = 0; i < n; i++) {
+        takeInput.on('line', (a) => {
+            lines = a;
+            inp = lines.split(" ");
+            value.x = parseInt(inp[0]);
+            value.y = parseInt(inp[1]);
+            value.r = parseInt(inp[2]);
+            christmasTree.push({ x: value.x, y: value.y, r: value.r });
+            console.log(christmasTree)
+            if (a = '\n') {
+                break;
+            } else {
+                //takeInput.close();
+                maxChristmasTree();
+            }
+        })
+    }
 }
 function maxChristmasTree() {
     for (var i = min_x; i <= max_x; i++) {
